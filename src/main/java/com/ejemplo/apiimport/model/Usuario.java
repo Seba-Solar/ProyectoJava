@@ -9,21 +9,34 @@ public class Usuario {
     @Id
     @GeneratedValue
     private long idusuario;
-    private String nombreusuario;
+        private String nombreusuario;
     private String correousuario;
     private String apellidousuario;
     private String pwusuario;
 
+    private Boolean codigoVerificacion = false;
+
     public Usuario() {
     }
 
-    public Usuario(long idusuario, String nombreusuario, String correousuario, String apellidousuario, String pwusuario) {
+    public Usuario(long idusuario, String nombreusuario, String correousuario, String apellidousuario, String pwusuario, Boolean codigoVerificacion) {
         this.idusuario = idusuario;
         this.nombreusuario = nombreusuario;
         this.correousuario = correousuario;
         this.apellidousuario = apellidousuario;
         this.pwusuario = pwusuario;
+        this.codigoVerificacion = codigoVerificacion;
     }
+
+    public Boolean getCodigoVerificacion() {
+        return codigoVerificacion;
+    }
+
+    public void setCodigoVerificacion(Boolean codigoVerificacion) {
+        this.codigoVerificacion = codigoVerificacion;
+    }
+
+    public boolean isEnabled( Boolean codigoVerificacion) { return codigoVerificacion; }
 
     public long getIdusuario() {
         return idusuario;

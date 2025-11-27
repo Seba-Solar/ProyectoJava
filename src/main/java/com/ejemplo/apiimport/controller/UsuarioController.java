@@ -14,6 +14,7 @@ public class UsuarioController {
     public Usuario register(@RequestBody Usuario user) {
         return service.register(user);
     }
+
     @GetMapping("/usuario/{nombreusuario}")
     public ResponseEntity<Usuario> getByNombre(@PathVariable String nombreusuario) {
         Usuario usuario = service.findByNombreUsuario(nombreusuario);
@@ -22,5 +23,6 @@ public class UsuarioController {
         }
         return ResponseEntity.ok(usuario);
     }
+
 
 }
